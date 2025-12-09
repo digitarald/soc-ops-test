@@ -1,7 +1,7 @@
 ---
 agent: agent
 description: Set up dependencies for this workspace
-tools: ['execute/runTask', 'execute/getTaskOutput', 'execute/runInTerminal', 'read', 'todo']
+tools: ['execute/runTask', 'execute/getTaskOutput', 'execute/runInTerminal', 'read', 'search', 'todo']
 ---
 
 Your goal is to successfully build and run the workspace as local development environment. Track your progress using #tool:todo .

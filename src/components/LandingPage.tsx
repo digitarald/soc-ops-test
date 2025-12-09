@@ -44,7 +44,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
         {/* Decorative bottom wave */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 md:h-16">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 md:h-16" aria-hidden="true">
             <path d="M0,0 C300,80 600,80 900,0 L900,120 L0,120 Z" fill="#fef8e7" />
           </svg>
         </div>

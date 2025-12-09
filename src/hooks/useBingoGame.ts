@@ -37,7 +37,7 @@ function validateStoredData(data: any): data is StoredGameData {
     data &&
     typeof data === 'object' &&
     data.version === STORAGE_VERSION &&
-    ['start', 'playing', 'bingo'].includes(data.gameState) &&
+    ['landing', 'start', 'playing', 'bingo'].includes(data.gameState) &&
     Array.isArray(data.board) &&
     (data.board.length === 0 || data.board.length === 25) &&
     data.board.every((sq: any) =>
@@ -112,7 +112,7 @@ export function useBingoGame(): BingoGameState & BingoGameActions {
   const loadedState = useMemo(() => loadGameState(), []);
 
   const [gameState, setGameState] = useState<GameState>(
-    () => loadedState?.gameState || 'start'
+    () => loadedState?.gameState || 'landing'
   );
   const [board, setBoard] = useState<BingoSquareData[]>(
     () => loadedState?.board || []

@@ -1,4 +1,5 @@
 import { useBingoGame } from './hooks/useBingoGame';
+import { LandingPage } from './components/LandingPage';
 import { StartScreen } from './components/StartScreen';
 import { GameScreen } from './components/GameScreen';
 import { BingoModal } from './components/BingoModal';
@@ -14,6 +15,10 @@ function App() {
     resetGame,
     dismissModal,
   } = useBingoGame();
+
+  if (gameState === 'landing') {
+    return <LandingPage onGetStarted={startGame} />;
+  }
 
   if (gameState === 'start') {
     return <StartScreen onStart={startGame} />;

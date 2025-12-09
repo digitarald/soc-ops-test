@@ -1,11 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Space+Grotesk:wght@400;600;700&display=swap');
 @import 'tailwindcss';
 
 @theme {
+  /* Original colors */
   --color-accent: #2563eb;
   --color-accent-light: #3b82f6;
   --color-marked: #dcfce7;
   --color-marked-border: #22c55e;
   --color-bingo: #fbbf24;
+  
+  /* Retro Bingo Hall color palette */
+  --color-retro-red: #d94627;
+  --color-retro-orange: #f27433;
+  --color-retro-yellow: #f5d547;
+  --color-retro-green: #5eb35f;
+  --color-retro-blue: #4a90b5;
+  --color-retro-teal: #3ab3a8;
+  --color-retro-cream: #fef8e7;
+  --color-retro-brown: #8b5a3c;
+  --color-retro-dark: #2c2416;
+  
+  /* Fonts */
+  --font-display: "Bebas Neue", "Anton", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+/* Retro animations */
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 40px currentColor;
+  }
+  20%, 24%, 55% {
+    opacity: 0.8;
+    text-shadow: none;
+  }
+}
+
+@keyframes slot-roll {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-100%); }
+  50% { transform: translateY(-200%); }
+  75% { transform: translateY(-300%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes flip-card {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(90deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+@keyframes bingo-ball-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes retro-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Retro utility classes */
+.retro-text-shadow {
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.retro-neon {
+  animation: neon-flicker 3s infinite;
+}
+
+.retro-dots-bg {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.retro-stripes-bg {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.03) 10px,
+    rgba(0, 0, 0, 0.03) 20px
+  );
+}
+
+.retro-border {
+  border: 4px solid;
+  border-image: linear-gradient(135deg, var(--color-retro-yellow), var(--color-retro-orange), var(--color-retro-red)) 1;
 }
 
 html,
@@ -16,6 +112,6 @@ body,
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   -webkit-tap-highlight-color: transparent;
 }

@@ -13,4 +13,4 @@ export interface BingoLine {
   squares: number[];
 }
 
-export type GameState = 'start' | 'playing' | 'bingo';
+export type GameState = 'landing' | 'start' | 'playing' | 'bingo';

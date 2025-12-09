@@ -1,11 +1,29 @@
+/* Import sophisticated fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
 @import 'tailwindcss';
 
 @theme {
+  /* Existing game colors */
   --color-accent: #2563eb;
   --color-accent-light: #3b82f6;
   --color-marked: #dcfce7;
   --color-marked-border: #22c55e;
   --color-bingo: #fbbf24;
+  
+  /* Landing page - Professional palette */
+  --color-primary: #1e3a8a;      /* Deep blue */
+  --color-primary-dark: #1e293b;  /* Charcoal */
+  --color-primary-light: #3b82f6; /* Brighter blue */
+  --color-secondary: #64748b;     /* Slate gray */
+  --color-accent-gold: #d97706;   /* Subtle gold */
+  --color-accent-copper: #b45309; /* Copper accent */
+  --color-surface: #f8fafc;       /* Light surface */
+  --color-surface-elevated: #ffffff;
+  
+  /* Typography */
+  --font-display: 'Crimson Pro', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html,
@@ -16,6 +34,89 @@ body,
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Elegant animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpLarge {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-slide-up-large {
+  animation: slideUpLarge 0.8s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+.delay-700 {
+  animation-delay: 0.7s;
+}
+
+/* Professional gradient background */
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #e2e8f0 50%,
+    #cbd5e1 100%
+  );
 }

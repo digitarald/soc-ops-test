@@ -148,15 +148,6 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <button
             onClick={onGetStarted}
             className="group relative inline-block px-10 py-5 md:px-16 md:py-6 bg-gradient-to-r from-retro-orange via-retro-red to-retro-orange text-white font-display text-4xl md:text-5xl font-bold rounded-xl shadow-2xl hover:shadow-retro-yellow/50 transform hover:scale-105 active:scale-95 transition-all duration-300 border-4 border-retro-yellow"
-            style={{
-              backgroundSize: '200% 100%',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundPosition = '100% 0';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundPosition = '0% 0';
-            }}
           >
             <span className="retro-text-shadow">START PLAYING!</span>
           </button>

@@ -2,6 +2,8 @@ interface LandingPageProps {
   onGetStarted: () => void;
 }
 
+const DELAY_CLASSES = ['delay-200', 'delay-300', 'delay-400', 'delay-500'];
+
 export function LandingPage({ onGetStarted }: LandingPageProps) {
   return (
     <div className="min-h-screen gradient-bg">
@@ -54,7 +56,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             ].map((item, index) => (
               <div 
                 key={index}
-                className={`animate-slide-up opacity-0 delay-${(index + 2) * 100}`}
+                className={`animate-slide-up opacity-0 ${DELAY_CLASSES[index]}`}
               >
                 <div className="h-full p-8 bg-white rounded-lg border border-gray-200 hover:border-primary transition-all duration-300 hover:shadow-lg">
                   <h3 

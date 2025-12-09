@@ -33,6 +33,15 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Typography utilities */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
 /* Animated gradient background */
 @keyframes gradient-shift {
   0% {
@@ -125,4 +134,12 @@ body {
 /* Utility for initial hidden state */
 .initial-hidden {
   opacity: 0;
+  visibility: hidden;
+}
+
+/* Make content visible when animated */
+.animate-fade-up,
+.animate-bounce-in,
+.animate-float {
+  visibility: visible;
 }

@@ -102,7 +102,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                   animation: `slide-up 0.6s ease-out ${i * 0.15 + 0.3}s both`,
                 }}
               >
-                <div className="inline-block bg-retro-red text-white font-display text-3xl md:text-4xl px-4 py-2 rounded-full mb-4 border-3 border-retro-dark retro-text-shadow">
+                <div className="inline-block bg-retro-red text-white font-display text-3xl md:text-4xl px-4 py-2 rounded-full mb-4 border-4 border-retro-dark retro-text-shadow">
                   {step.num}
                 </div>
                 <h3 className="font-display text-2xl md:text-3xl text-retro-dark mb-3">
@@ -147,9 +147,15 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           
           <button
             onClick={onGetStarted}
-            className="group relative inline-block px-10 py-5 md:px-16 md:py-6 bg-gradient-to-r from-retro-orange via-retro-red to-retro-orange bg-size-200 hover:bg-pos-100 text-white font-display text-4xl md:text-5xl font-bold rounded-xl shadow-2xl hover:shadow-retro-yellow/50 transform hover:scale-105 active:scale-95 transition-all duration-300 border-4 border-retro-yellow"
+            className="group relative inline-block px-10 py-5 md:px-16 md:py-6 bg-gradient-to-r from-retro-orange via-retro-red to-retro-orange text-white font-display text-4xl md:text-5xl font-bold rounded-xl shadow-2xl hover:shadow-retro-yellow/50 transform hover:scale-105 active:scale-95 transition-all duration-300 border-4 border-retro-yellow"
             style={{
               backgroundSize: '200% 100%',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundPosition = '100% 0';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundPosition = '0% 0';
             }}
           >
             <span className="retro-text-shadow">START PLAYING!</span>
